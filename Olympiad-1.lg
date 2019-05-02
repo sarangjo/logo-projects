@@ -1,0 +1,35 @@
+1. Check if zero = haszero
+
+erase "haszero
+to haszero :n
+	repeat count :n [
+		if [
+			equalp item repcount :n 0
+		] [
+			output "true
+		]
+	]
+output "false
+end
+
+2. Main Program = main
+
+erase "main
+to main
+local [a count]
+make "count 0
+repeat 8999 [
+	make "a 2334
+	if [
+		equalp haszero :a "false
+	] [
+		if [
+			and (equalp remainder :a 4 0) (not equalp remainder :a 8 0)
+		] [
+			make "count :count+1
+			print :a
+		]
+	]
+]
+print :count
+end

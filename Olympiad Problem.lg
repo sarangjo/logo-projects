@@ -1,0 +1,39 @@
+How many 4-digit nos., containing no zeroes, are divisible by 4 but not by 8?
+
+Algorithm:
+
+procedure 1: to list all 4 digit numbers
+procedure 2: check if contains 0, true, false
+procedure 3: is divisible by 4 and not by 8, true, false
+
+erase "main
+to main
+local [c r1 r2]
+make "c 0
+FOR [i 1111 9999] [
+  make "r1 check_if_0 :i
+  if equalp :r1 "false [
+    make "r2 check_div :i
+      if equalp :r2 "true [ print :i make "c :c+1]
+  ]
+]
+print :c
+end
+
+erase "check_if_0
+to check_if_0 :n
+FOR [i 1 4] [
+  if equalp (item :i :n) 0 [output "true]
+]
+output "false
+end
+
+;pr check_if_0 
+
+erase "check_div
+to check_div :n
+if equalp (remainder :n 4) 0 [
+  if not (equalp (remainder :n 8) 0) [output "true]
+]
+output "false
+end

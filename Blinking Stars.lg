@@ -1,0 +1,16 @@
+;pointstar
+
+erase "drawstar
+to drawstar :n
+shift product :n 2000 product :n 2000
+setpc sum 1 random 14 pointstar 24 30
+end
+
+;cs repeat 15 [drawstar repcount]
+;cs repeat 10 [pu home pd repeat 15 [drawstar repcount] wait 10]
+erase "blink
+to blink :b :f 
+repeat :b [pu home pd repeat 15 [drawstar repcount] wait :f]
+end
+
+cs blink 50 20

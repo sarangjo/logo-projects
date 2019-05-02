@@ -1,0 +1,17 @@
+1. As the no. of sides goes on increasing:
+	i.	the total area of the polygon increases and
+	ii.	the degrees the turtle turns through each time reduces.
+
+2. cs fd 100 rt 45 fd 50 lt 45 lt 45 bk 100 lt 45 bk 84 rt 45 fd 200 lt 45 fd 50 lt 45 fd 200 lt 45 fd 100 lt 45 fd 30 lt 45 fd 122 lt 45 lt 45 fd 57
+In the above command there are:
+	2 'rt 45' commands and
+	10 'lt 45' commands.
+Therefore, to prove the T4 theorem, we must add the (positive) 'right-turned' degrees and the (negative) 'left-turned' degrees.
+The sum is -360.
+
+3. 5 squares, side-by-side:
+	repeat 5 [repeat 4 [fd 50 rt 90] rt 90 pu fd 90 lt 90 pd]
+
+4. This reduces our work. This is because when we repeatedly type the same command over and over again, there is a high chance of making a small mistake. Also, it is tedious work.
+On the other hand when we use the 'repeat' command, we can lower the chances of mistakes. It also saves time.
+The turtle does the same amount of work, but just receives the instruction from different sources.

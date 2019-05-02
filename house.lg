@@ -1,0 +1,47 @@
+to rectangle: height width 
+fd height
+rt 90
+fd width
+rt 90
+fd height 
+rt 90
+fd width
+rt 90
+end
+
+to roof: size
+rt 50
+fd size
+rt 80
+fd size
+end
+
+rectangle: 80 100
+fd 80
+roof: 68
+rt 50
+pu
+fd 80
+rt 90
+fd 100
+pd
+rt 180
+
+fd 40
+lt 90
+rectangle: 30 20
+pu
+fd 60
+lt 90
+fd 25
+rt 90
+pd
+
+rectangle: 10 10
+rt 90
+pu
+fd 60
+lt 90
+pd
+rectangle: 10 10
+ht

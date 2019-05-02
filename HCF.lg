@@ -1,0 +1,28 @@
+Take two nos. a and b.
+Check which is greater.
+Make a and b, c and d s.t. c>d
+Find q and r:
+	c = dq+r
+(q = quotient, r = remainder)
+Check if r = 0
+	d is HCF.
+Make c=d, d=r
+Step 4.
+
+erase "lemma
+to lemma :x :y
+	local [q r]
+	make "q int quotient :x :y
+	make "r remainder :x :y
+	output [:q :r]
+
+erase "hcf
+to hcf :a :b
+	local [c d q r]
+	ifelse [a>b] [
+		make "c :a
+		make "d :b
+	] [
+		make "c :b
+		make "d :a
+	]

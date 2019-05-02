@@ -1,0 +1,27 @@
+to tunnel :start :change :end
+for [i :start :end] [square :start 
+pu lt 90 fd :i/2 rt 90 pd]
+end
+
+
+for [i 5 200 5] [square :i 
+wait 0 pu lt 90 fd (:i-5)/2 rt 90 pd wait 0]
+
+
+square 30    	lt 90 fd 10/2 rt 90
+square 30+10	lt 90 fd 10/2 rt 90
+
+square 30+10+10	lt 90 fd 10/2 rt 90
+
+FINAL
+USING REPEAT:
+repeat 50 [lt 90 fd 10/2 rt 90 square 5+(10*(repcount-1))]
+
+USING FOR:
+for [i 0 49] [lt 90 fd 10/2 rt 90 square 5+(10*:i)]
+
+PROGRAM:
+erase "tunnel
+to tunnel :start :change :no
+for [i 1 :no] [lt 90 fd :change/2 rt 90 square :start+(:change*:i) ]
+end

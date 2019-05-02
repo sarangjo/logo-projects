@@ -1,0 +1,33 @@
+erase "circlert
+to circlert :ht
+  repeat 360 [
+    fd (3.14*:ht)/360
+    rt 1
+  ]
+end
+
+; Circle-Diagram 1
+; Draws 4 series of 10 circles each: two vertical series side-by-side, and two horizontal ones one above the other.
+; :ht is the height of each circle.
+
+erase "circle.diagram1
+to circle.diagram1 :ht
+  ; Moves to the bottom-left corner of the shape.
+  shift –(:ht) –(quotient :ht 2)
+  ; Draws the 4 series.
+  repeat 4 [
+    ; Draws each series by drawing a circle and shifting up by 1/10th the height.
+    repeat 10 [
+      circlert :ht shift 0 quotient :ht 10
+    ]
+    ; Moves position for the next series.
+    shift quotient :ht 2 quotient :ht 2
+    ; Turns for the next series.
+    rt 90
+  ]
+  ; Moves back to the original position.
+  shift :ht –(quotient :ht 2)
+end
+
+cs circle.diagram1 100
+

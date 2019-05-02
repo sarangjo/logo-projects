@@ -1,0 +1,28 @@
+
+                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+erase "word.list
+to word.list :l :size
+  repeat count :l [
+    if (repcount = 1) [c.l item repcount :l :size]
+    if not (repcount = 1) [l item repcount :l :size]
+    if not (repcount = count :l) [space :size]
+  ]
+end
+
+word.list [Hey wassup] 100
+
+

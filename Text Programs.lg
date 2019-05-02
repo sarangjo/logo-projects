@@ -1,0 +1,38 @@
+1. Create a list from a given word.
+
+erase "word.to.list
+to word.to.list :word
+local "list
+make "list []
+repeat count :word [make "list sentence :list item repcount :word]
+show :list
+end
+
+erase "list.to.word
+to list.to.word :list
+local "word
+make "word "
+print count :list
+repeat count :list [make "word word :word item repcount :list]
+show :word
+end
+
+erase "prime
+to prime :n
+repeat (round sqrt :n) - 1 [if ((remainder :n (repcount + 1)) = 0) [print sentence sentence [Sorry,] :n [is not a prime.]  stop]]
+print sentence sentence [Yes!] :n [is very much a prime!]
+end
+
+prime 100
+prime 21389
+
+
+
+erase "is.prime
+to is.prime :n
+repeat (round sqrt :n) - 1 [if ((remainder :n (repcount + 1)) = 0) [output 0 stop]]
+output 1
+end
+
+print is.prime 100
+print is.prime 21391

@@ -1,0 +1,310 @@
+setpc 7
+erase "square 
+to square :size
+repeat 4 [fd :size rt 90]
+end
+
+erase "triangle
+to triangle :size
+repeat 3 [fd :size rt 120]
+end
+
+erase "half.circle
+to half.circle :size
+repeat :size[fd 1 rt quotient 180 :size]
+end
+
+erase "circle
+to circle :size
+repeat :size [fd 1 rt quotient 360 :size]
+end
+
+erase "star
+to star :size :number
+repeat :number [fd :size bk :size rt quotient 360 :number]
+end
+
+erase "moon
+to moon 
+setpensize 40 pu fd 300 lt 90 fd 500 pd circle 100
+end
+
+erase "alien
+to alien :color
+repeat 3 [fd 100 rt 120]
+rt 60
+fd 20
+lt 60
+fd 30
+rt 90
+fd 20
+rt 90
+fd 40 rt 90
+fd 20
+rt 90
+fd 10 pu
+fd 50
+rt 90 pd
+fd 20 lt 90
+fd 40
+lt 90
+ fd 20
+lt 90
+fd 40
+lt 90
+fd 10
+ rt 90
+fd 20
+lt 90
+lt 90
+fd 10
+rt 90
+pu
+fd 20
+pd
+lt 180
+fd 2
+ppt pd
+bk 5
+pu
+bk 20 pd
+fd 5 ppt
+bk 12 fd 6
+rt 90
+fd 6
+bk 12
+fd 6 lt 90
+pu
+bk 14
+pd
+bk 150
+rt 130
+fd 100
+bk 100
+rt 50
+rt 50
+fd 100
+bk 100
+rt 130
+fd 80
+rt 50
+fd 100
+bk 100
+lt 50
+lt 50
+fd 100
+bk 100
+rt 50
+
+fd 70
+lt 30
+fd 100
+rt 30
+
+setpc :color
+repeat 50 [fd 50 bk 50 rt 90 fd 2 lt 90]
+
+end
+
+
+
+; spaceship procedure
+erase "spaceship
+to spaceship
+setpc 2 setpensize 15 half.circle 150
+fd 150
+half.circle 150
+fd 150
+rt 90
+setpc 7
+setpensize 1
+pu
+fd 40
+rt 90
+pd setpc 6 setpensize 15 fd 150
+rt 90 setpc 7 setpensize 1
+setpc 6 setpensize 15 half.circle 250
+rt 90 setpc 7 setpensize 1
+fd 10
+rt 180
+rt 90
+pu
+fd 35
+rt 90
+pd
+setpc 4 setpensize 10 square 25
+rt 90 setpc 7 setpensize 1
+fd 25
+lt 90
+pu
+fd 50
+rt 180
+pd setpc 13 setpensize 10 circle 100
+setpc 7 setpensize 1 lt 180
+pu
+fd 30
+lt 90
+pd setpc 4 setpensize 10
+square 25  pu setpc 7 setpensize 1
+fd 25 
+rt 90
+fd 45
+pd setpc 13 setpensize 10
+circle 100 pu setpc 7 setpensize 1 
+lt 90
+fd 23
+rt 45
+pd 
+fd 25
+bk 25
+lt 90
+fd 25
+bk 25
+lt 45
+fd 100
+rt 45
+fd 25
+bk 25
+rt 90
+fd 25
+bk 25
+end
+
+; ================= The procedure definitions end here ======================
+
+
+; the program to draw the project starts here
+pu lt 90 
+fd 250
+rt 90
+rt90 pd
+
+; ================= Draw the first alien ======================
+alien 2
+
+pu
+home
+setpc 7
+pu lt 90 
+fd 500
+rt 90
+rt90 pd
+
+; ================= Draw the second alien ======================
+alien 4
+
+pu home setpc 7
+
+fd 150
+rt 90
+fd 300
+pd
+
+
+; ================= Draw the spaceship ======================
+spaceship
+
+; ================= Draw the moon ======================
+pu home pd
+moon
+
+; ================= Draw the stars ======================
+pu home
+pd
+
+setpensize 1
+pu
+fd 100
+rt 90 setpc 4
+pd
+star 20 30
+pu
+lt 180
+fd 150
+rt 90
+fd 150
+setpc 2
+pd star 5 20
+pu rt 90
+fd 600
+lt 90
+setpc 6 pd
+
+star 10 90
+pu
+rt 180
+fd 200
+pd
+setpc 13
+star 7 14 pu
+rt 45
+fd 200
+setpc 10
+pd
+star 18 36
+pu
+rt 45
+fd 250
+setpc 5
+pd
+star 12 23
+pu
+fd 610
+setpc 12
+pd
+star 3 50
+pu
+rt 150 fd 250
+setpc 15
+pd
+star 19 34
+pu
+fd 100
+lt 90
+fd 100
+setpc 11
+pd
+star 16 36
+rt 90
+pu
+fd 200
+rt 45
+fd 150
+setpc 10
+pd
+star 17 34
+pu
+rt 90
+fd 100
+rt 75
+fd 600
+bk 100
+setpc 14
+pd
+setpensize 2
+star 14 29
+lt 90
+pu
+fd 80
+lt 90
+fd 1000
+pd setpc 3
+star 11 80
+pu lt 90
+fd 200
+pd star 22 44
+pu fd 250
+lt 90
+fd 200
+pd setpc 14
+star 15 20
+pu
+fd 400 fd 200
+rt 90
+fd 50
+setpc 6
+pd
+star 21 39
+pu home
+ 
+

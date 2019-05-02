@@ -1,0 +1,58 @@
+to polygon :ht :side
+repeat :side [fd :ht rt quotient 360 :side]
+end
+
+to hillpoly :ht :side
+repeat :side [fd :ht lt quotient 360 :side]
+end
+
+erase "superpoly
+to superpoly :ht :side1 :side2
+polygon :ht :side1
+lt difference 180 quotient 360 :side2
+repeat :side1 [polygon :ht :side2 rt difference 180 quotient 360 :side2 fd :ht rt difference quotient 360 :side1 difference 180 quotient 360 :side2]
+rt difference 180 quotient 360 :side2 
+end
+;-------------------
+erase "hello2
+to hello2 :word
+print :word
+end
+;-------------------
+erase "hills
+to hills :no :ht
+repeat :no [hillpoly :ht 3 fd :ht]
+end
+;-------------------
+erase "pyramid
+to pyramid :no :ht 
+rt 90
+repeat :no [hills repcount :ht bk product repcount :ht lt 60 pu bk :ht pd rt 60]
+end
+
+
+1 	x1/5	5
+2		4
+3		3
+4		2
+5		1
+
+
+;-------------------
+to rtisotri :ht
+fd :ht
+bk :ht
+rt 90
+fd :ht
+lt 135
+fd :ht
+bk :ht
+lt 45
+fd :ht
+rt 90
+fd :ht
+rt 135
+fd :ht
+end
+rtisotri 100
+

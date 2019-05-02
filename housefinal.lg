@@ -1,0 +1,209 @@
+to square :ht
+repeat 4 [fd :ht rt 90]
+end
+
+to triangle :ht
+repeat 3 [fd :ht rt 120]
+end
+
+to para :ht :lt :ang
+rt difference 90 :ang
+fd :ht
+rt :ang
+fd :lt
+rt difference 180 :ang
+fd :ht
+rt :ang
+fd :lt
+rt 90
+end
+
+to rectangle :ht :lt
+repeat 2 [fd :ht rt 90 fd :lt rt 90]
+end
+
+to parahouse :ht :lt
+rt difference 90 120
+fd :ht
+rt 120
+fd :lt
+rt difference 180 120
+fd :ht
+rt 120
+fd :lt
+rt 90
+end
+
+;------------------------------------------------------------------------------------------------------------------------------------------------------------------xxx-------------------------------------------------------------------------------------------------------------------------------------------------
+
+to shiftrt :lt
+rt 90
+pu
+fd :lt
+lt 90
+pd
+end
+
+to shiftlt :lt
+lt 90
+pu
+fd :lt
+rt 90
+pd
+end
+
+to shiftup :ht
+pu
+fd :ht
+pd
+end
+
+to shiftdn :ht
+pu
+bk :ht
+pd
+end
+
+;------------------------------------------------------------------------------------------------------------------------------------------------------------------xxx-------------------------------------------------------------------------------------------------------------------------------------------------
+
+to house :ht :lt
+square :ht
+rt 90
+fd quotient :ht 3
+lt 90
+rectangle quotient :ht 2 quotient :ht 3
+lt 90
+fd quotient :ht 3
+rt 90
+fd :ht
+lt 90
+bk :ht
+triangle :ht
+rt 90
+parahouse :ht :lt
+bk :ht
+rectangle :ht :lt
+lt 90
+fd :ht
+rt 90
+end
+
+;------------------------------------------------------------------------------------------------------------------------------------------------------------------xxx-------------------------------------------------------------------------------------------------------------------------------------------------
+
+to squwin :side
+square :side
+fd quotient :side 2
+rt 90
+fd :side
+bk quotient :side 2
+lt 90
+fd quotient :side 2
+bk :side
+lt 90
+fd quotient :side 2
+rt 90
+end
+
+to recwin :ht :lt
+rectangle :ht :lt
+fd quotient :ht 2
+rt 90
+fd :lt
+bk quotient :lt 2
+lt 90
+fd quotient :ht 2
+bk :ht
+lt 90
+fd quotient :lt 2
+rt 90
+end
+
+
+;------------------------------------------------------------------------------------------------------------------------------------------------------------------xxx-------------------------------------------------------------------------------------------------------------------------------------------------
+
+to housewin :ht :lt
+square :ht
+rt 90
+fd quotient :ht 3
+lt 90
+rectangle quotient :ht 2 quotient :ht 3
+lt 90
+fd quotient :ht 3
+rt 90
+fd :ht
+lt 90
+bk :ht
+triangle :ht
+rt 90
+parahouse :ht :lt
+bk :ht
+rectangle :ht :lt
+rt 90
+fd quotient :lt 9
+pu
+lt 90
+fd quotient :ht 10
+pd
+squwin quotient :lt 9
+rt 90
+pu
+fd product quotient :lt 9 2
+lt 90
+pd
+recwin quotient :lt 9 quotient :lt 3
+rt 90
+pu
+fd sum quotient :lt 3 quotient :lt 9
+lt 90
+pd
+squwin quotient :lt 9
+pu
+bk quotient :ht 10
+lt 90
+pd
+fd product 7 quotient :lt 9
+rt 90
+fd quotient :ht 2
+rt 90
+pu
+fd quotient :lt 9
+lt 90
+fd quotient :ht 10
+pd
+squwin quotient :lt 9
+rt 90
+pu
+fd product quotient :lt 9 2
+lt 90
+pd
+recwin quotient :lt 9 quotient :lt 3
+rt 90
+pu
+fd sum quotient :lt 3 quotient :lt 9
+lt 90
+pd
+squwin quotient :lt 9
+pu
+bk sum quotient :ht 2 quotient :ht 10
+lt 90
+fd sum product 7 quotient :lt 9 :ht
+rt 90
+pd
+end
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------xxx-------------------------------------------------------------------------------------------------------------------------------------------------
+
+to colony
+shiftrt 300
+shiftup 225
+setpc 7
+repeat 7 [housewin 50 75 shiftlt 145]
+shiftlt 285
+shiftdn 155
+setpc 12
+repeat 6 [housewin 62 87 shiftlt 169]
+shiftlt 295
+shiftdn 179
+setpc 6
+repeat 5 [housewin 75 100 shiftlt 195]
+end

@@ -1,0 +1,27 @@
+erase "getSquare
+to getSquare :n
+for [i 1 :n] [
+	if [:i*:i > :n] [
+		ifelse [(:i*:i)-:n > :n-((:i-1)*(:i-1))] [
+			output :i-1
+		] [
+			output :i
+		]
+	]
+]
+end
+
+erase "sqRoot
+to sqRoot :n :p
+local "ans
+make "ans 1
+for [i 1 :p] [
+	make "ans (getSquare :n*(power 100 :i-1)) / (power 10 :i-1)
+]
+print :ans
+end
+
+sqRoot 5 1
+sqRoot 5 2
+sqRoot 5 3
+

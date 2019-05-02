@@ -1,0 +1,26 @@
+i.	leaf (right)
+to leafrt :ht
+rt 10
+fd :ht 
+rt 45 
+fd :ht 
+rt 135
+fd :ht
+rt 45
+fd :ht
+rt 135
+end
+leaf (left)
+to leaflt :ht
+lt 10
+fd :ht 
+lt 45 
+fd :ht 
+lt 135
+fd :ht
+lt 45
+fd :ht
+lt 135
+end
+simple stretched diamond shape 
+setpc 2

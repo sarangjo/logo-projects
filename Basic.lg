@@ -1,0 +1,88 @@
+erase "square
+to square :side
+	repeat 4 [fd :side rt 90]
+end
+
+erase "rectangle
+to rectangle :ht :lt
+	repeat 2 [fd :ht rt 90 fd :lt rt 90]
+end
+
+erase "regpen
+to regpen :ht
+	repeat 5 [fd :ht rt 72]
+end
+
+erase "equitri
+to equitri :side
+	repeat 3 [fd :side rt 120]
+end
+
+erase "5star
+to 5star :side
+	repeat 5 [fd :side rt 144]
+end
+
+erase "reghex
+to reghex :side
+	repeat 6 [fd :side rt 60]
+end
+
+erase "regoct
+to regoct :side
+	repeat 8 [fd :side rt 45]
+end
+
+erase "rtangrt
+to rtangrt :ht :lt
+	fd :ht
+	rt 90
+	fd :lt
+end
+
+erase "rtanglt
+to rtanglt :ht :lt
+	fd :ht
+	lt 90
+	fd :lt
+end
+
+erase "circlert
+to circlert :ht
+	repeat 360 [fd quotient product 3.14 :ht 360 rt 1]
+end
+
+erase "circlelt
+to circlelt :ht
+	repeat 360 [fd quotient product 3.14 :ht 360 lt 1]
+end
+
+erase "hcirclert
+to hcirclert :ht
+	repeat 180 [fd quotient product 3.14 :ht 360 rt 1]
+end
+
+erase "hcirclelt
+to hcirclelt :ht
+	repeat 180 [fd quotient product 3.14 :ht 360 lt 1]
+end
+
+erase "qcirclert
+to qcirclert :ht
+	repeat 90 [fd quotient product 3.14 :ht 360 rt 1]
+end
+
+erase "qcirclelt
+to qcirclelt :ht
+	repeat 90 [fd quotient product 3.14 :ht 360 lt 1]
+end
+
+erase "shift
+to shift  :x :y
+rt 90
+pu
+fd :x
+lt 90
+fd :y
+pd
+end

@@ -1,0 +1,18 @@
+Rain:
+erase "move
+to move
+pu setxy (random 625*2)-650 (random 400)-100
+pd
+end
+
+erase "rain
+to rain :n
+cs
+rt 30
+forever [
+    move
+    ppt setpensize 1 fd 100
+    move
+    pe setpensize :n fd 100
+  ]
+end

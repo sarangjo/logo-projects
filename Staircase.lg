@@ -1,0 +1,30 @@
+
+Staircase
+Draws a staircase from the bottom-left to the top-right; :ht is the height of each step, while :no is the number of steps in the staircase.
+Needs rtangrt and shift.
+
+erase "rtangrt
+to rtangrt :ht :lt
+fd :ht
+rt 90
+fd :lt
+end
+
+to shift  :x :y
+rt 90
+pu
+fd :x
+lt 90
+fd :y
+pd
+end
+
+erase "staircase
+to staircase :ht :no
+repeat :no [rtangrt :ht :ht lt 90]
+shift –(product :ht :no) –(product :ht :no)
+end
+
+cs staircase 50 6
+cs staircase 20 10
+

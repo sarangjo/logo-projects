@@ -1,0 +1,38 @@
+Block Capital T
+Draws a block capital T; :ht is the height of the letter and also the length of the upper horizontal line.
+Needs shift.
+
+erase "shift
+to shift  :x :y
+rt 90
+pu
+fd :x
+lt 90
+fd :y
+pd
+end
+
+erase "blockcapst
+to blockcapst :ht
+shift product 0.4 :ht 0
+fd product 0.9 :ht
+lt 90
+fd sum product 0.05 :ht product 0.4 :ht
+rt 90
+fd product 0.1 :ht
+rt 90
+fd :ht
+rt 90
+fd product 0.1 :ht
+rt 90
+fd sum product 0.05 :ht product 0.4 :ht
+lt 90
+fd product 0.9 :ht
+rt 90
+fd product 0.1 :ht
+rt 90
+shift –(product 0.4 :ht) 0
+shift sum 10 :ht 0
+end
+
+cs blockcapst 100

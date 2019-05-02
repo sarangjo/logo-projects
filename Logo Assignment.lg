@@ -1,0 +1,7 @@
+1. Using the REPEAT procedure, write instructions to draw regular polygons of different number of sides. Start with 3 (triangle) and go on increasing. For a large number of sides, what do you get?
+ 
+2. According to the Turtle Round Trip principle, the Turtle always turns 360 degrees when it travels along a closed shape and returns to its original state. We have verified this by a couple of examples. Can you take your Turtle on a similar trip around the screen such that, it should occasionally take turns of 45 degrees (either right or left)? It should finally return to its original state. Find out the total distance it travels and the total angle it turns.
+ 
+3. Write Logo instructions to draw an array of squares (either horizontal or vertical).
+ 
+4. We have learnt the REPEAT command. Whose work does this command reduce - yours or the Turtle's?

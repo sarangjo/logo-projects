@@ -1,0 +1,19 @@
+1. GARDEN
+i. Flowers:
+Define: square, equilateral triangle, regular pentagon, regular hexagon, regular octagon, regular decagon, spacing between plants
+square, triangle, pentagon, hexagon, octagon, decagon can be rotated 16 times (22.5 degrees each time)
+setpc 6, 14, 13, 5, 4
+ii. Leaves:
+Define: -
+stretched diamond shape with a main vein running end-to-end, subordinate veins optional
+setpc 2
+iii. Stem
+Define: -
+simple straight line
+setpc 8, 9
+SiZe VaRiAtIoN iN eAcH pRoCeDuRe.
+
+2. COLONY
+i. Frame:
+Define: rectangle, square, isosceles triangle, equilateral triangle, parallelogram (right/left), spacing between houses
+simple outline will suffice for each: a square for the front, a rectangle for the side, an equilateral/isosceles

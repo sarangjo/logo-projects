@@ -1,0 +1,951 @@
+to square :ht
+repeat 4 [fd :ht rt 90]
+end
+
+to capsh :ht
+fd :ht
+bk quotient :ht 2
+rt 90
+fd quotient :ht 2
+lt 90
+fd quotient :ht 2
+bk :ht
+lt 90
+pu
+fd quotient :ht 2
+rt 90
+pd
+end
+
+to hondalogo
+setpc 10
+square 100
+rt 90
+fd 25
+lt 90
+capsh 100
+lt 90
+fd 25
+rt 90
+setpc 7
+end
+
+to lowso :ht
+rt 90
+pu
+fd quotient :ht 2
+lt 180
+pd
+repeat 360 [fd quotient sum product 3 quotient :ht 2 product 7 quotient :ht 100 180 rt 1]
+pu
+fd quotient :ht 2
+rt 90
+pd
+end
+
+to lowsn :ht
+fd :ht
+bk quotient :ht 2
+repeat 180 [fd quotient sum product 3 quotient :ht 2 product 7 quotient :ht 100 180 rt 1]
+fd quotient :ht 2
+rt 90
+pu
+fd :ht
+rt 90
+pd
+end
+
+to lowsd :ht
+rt 90
+pu
+fd quotient :ht 2
+lt 90
+pd
+fd :ht
+bk product quotient :ht 4 3
+repeat 360 [fd quotient quotient sum product 3 quotient :ht 2 product 7 quotient :ht 100 180 2 lt 1]
+bk quotient :ht 4
+lt 90
+pu
+fd quotient :ht 2
+rt 90
+pd
+end
+
+to lowsa :ht
+pu
+fd quotient :ht 2
+pd
+repeat 360 [fd quotient sum product 3 quotient :ht 2 product 7 quotient :ht 100 180 rt 1]
+rt 90
+pu
+fd :ht
+lt 90
+pd
+fd quotient :ht 2
+bk :ht
+lt 90
+pu
+fd :ht
+rt 90
+pd
+end
+
+to shiftrt :lt :ht
+rt 90
+pu
+fd :lt
+lt 90
+fd :ht
+pd
+end
+
+to shiftlt :lt :ht
+lt 90
+pu
+fd :lt
+rt 90
+fd :ht
+pd
+end
+
+to honda
+capsh 80
+shiftrt 50 0
+lowso 40
+shiftrt 50 0
+lowsn 40
+shiftrt 50 0
+lowsd 80
+shiftrt 50 0
+lowsa 40
+shiftlt 200 0
+end
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------xxx---------------------------------------------------------------------------------------------------------------------------------------------------
+
+to qcircle :ht
+repeat 90 [fd quotient quotient product :ht 3.14 90 4 rt 1]
+end
+
+to circle :ht
+repeat 360 [fd quotient sum product 3 quotient :ht 2 product 7 quotient :ht 100 180 rt 1]
+end
+
+to bmwlogo
+pu
+fd 50
+pd
+circle 100
+pu
+rt 90
+fd 10
+lt 90
+pd
+repeat 2 [setpc 1 qcircle 80 setpc 7 qcircle 80]
+rt 90
+fd 80
+bk 40
+lt 90
+bk 40
+fd 80
+shiftlt 50 -90
+pd
+end
+
+to capsb :ht
+fd :ht
+rt 90
+fd quotient :ht 4
+repeat 180 [fd quotient quotient sum product 3 quotient :ht 2 product 7 quotient :ht 100 180 2 rt 1]
+fd quotient :ht 4
+rt 180
+fd quotient :ht 4
+repeat 180 [fd quotient quotient sum product 3 quotient :ht 2 product 7 quotient :ht 100 180 2 rt 1]
+fd quotient :ht 4
+rt 90
+end
+
+to capsm :ht
+fd :ht
+rt 145
+fd difference :ht quotient :ht 7.75
+lt 110
+fd difference :ht quotient :ht 7.75
+rt 145
+fd :ht
+rt 90
+pu
+fd :ht
+rt 90
+pd
+end
+
+to capsw :ht
+rt 90
+pu
+fd quotient :ht 6
+lt 100
+pd
+fd :ht
+bk :ht
+rt 20
+fd :ht
+rt 160
+fd :ht
+lt 160
+fd :ht
+rt 170
+pu
+fd difference :ht 2
+rt 90
+fd sum quotient product :ht 2 3 2
+rt 90
+pd
+end
+
+to bmw
+capsb 100
+shiftrt 70 0
+capsm 100
+shiftrt 110 0
+capsw 100
+shiftlt 180 0
+end
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------xxx---------------------------------------------------------------------------------------------------------------------------------------------------
+
+to chevylogo
+setpc 14
+pu
+fd 20
+rt 30
+pd
+fd 20
+rt 60
+fd 40
+lt 90
+fd 20
+rt 90
+fd 20
+rt 90
+fd 20
+lt 90
+fd 50
+rt 120
+fd 20
+rt 60
+fd 40
+lt 90
+fd 20
+rt 90
+fd 20
+rt 90
+fd 20
+lt 90
+fd 50
+rt 90
+pu
+bk 20
+pd
+setpc 7
+end
+
+to capsc :ht
+rt 90
+pu
+fd :ht
+lt 180
+pd
+fd quotient :ht 2
+repeat 180 [fd quotient product 3.14 quotient :ht 2 180 rt 1]
+fd quotient :ht 2
+rt 90
+pu
+fd :ht
+rt 90
+fd :ht
+rt 90
+pd
+end
+
+to lowsh :ht
+fd :ht
+bk product 3 quotient :ht 4
+repeat 180 [fd quotient quotient sum product 3 quotient :ht 2 product 7 quotient :ht 100 180 2 rt 1]
+fd quotient :ht 4
+rt 90
+pu
+fd quotient :ht 2
+rt 90
+pd
+end
+
+to lowse :ht
+pu
+rt 90
+fd :ht
+rt 180
+pd
+fd quotient :ht 2
+repeat 270 [fd quotient sum product 3 quotient :ht 2 product 7 quotient :ht 100 180 rt 1]
+rt 90
+fd :ht
+rt 90
+pu
+bk quotient :ht 2
+end
+
+to lowsv :ht
+rt 90
+pu
+fd quotient :ht 5
+lt 100
+pd
+fd :ht
+bk :ht
+rt  20
+fd :ht
+bk :ht
+lt 100
+pu
+fd quotient :ht 5
+rt 90
+pd
+end
+
+to lowsr :ht
+fd :ht
+bk quotient :ht 2
+repeat 180 [fd quotient product quotient :ht 2 3.14 180 rt 1]
+pu
+fd quotient :ht 2
+rt 90
+fd :ht
+rt 90
+pd
+end
+
+to lowsl :ht
+fd :ht
+bk :ht
+end
+
+to lowse :ht
+pu
+rt 90
+fd :ht
+rt 180
+pd
+fd quotient :ht 2
+repeat 270 [fd quotient product quotient :ht 2 3.14 180 rt 1]
+rt 90
+fd :ht
+rt 90
+pu
+bk quotient :ht 2
+end
+
+to lowst :ht
+rt 90
+pu
+fd quotient :ht 4
+lt 90
+pd
+fd :ht
+bk product 2 quotient :ht 5
+lt 90
+bk quotient :ht 4
+fd quotient :ht 2
+pu
+rt 90
+bk product 3 quotient :ht 5
+end
+
+to chevy
+capsc 60
+shiftrt 80 0
+lowsh 60
+shiftrt 40 0
+lowse 30
+shiftrt 40 0
+lowsv 30
+shiftrt 25 0
+lowsr 30
+shiftrt 40 0
+lowso 30
+shiftrt 40 0
+lowsl 60
+shiftrt 11 0
+lowse 30
+shiftrt 40 0
+lowst 50
+shiftlt 316 0
+end
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------xxx---------------------------------------------------------------------------------------------------------------------------------------------------
+
+to hyundailogo
+pu
+rt 90
+fd 50
+lt 180
+pd
+repeat 180 [fd quotient quotient product 100 3.14 180 2 rt 1]
+fd 120
+repeat 180 [fd quotient quotient product 100 3.14 180 2 rt 1]
+fd 120
+rt 120
+fd 116
+bk 58
+rt 60
+fd 58
+lt 60
+fd 58
+bk 116
+lt 120
+pu
+fd 107
+pd
+rt 90
+end
+
+to lowsy :ht
+pu
+fd quotient :ht 4
+pd
+fd quotient :ht 4
+bk quotient :ht 4
+rt 180
+repeat 180 [fd quotient product quotient :ht 4 3.14 180 lt 1]
+fd quotient :ht 4
+bk product 3 quotient :ht 4
+rt 180
+repeat 180 [fd quotient product quotient :ht 4 3.14 180 rt 1]
+pu
+fd quotient :ht 4
+pd
+end
+
+to lowsu :ht
+pu
+fd quotient :ht 2
+pd
+fd quotient :ht 2
+bk quotient :ht 2
+rt 180
+repeat 180 [fd quotient product quotient :ht 2 3.14 180 lt 1]
+fd quotient :ht 2
+pd
+bk :ht
+lt 90
+pu
+fd :ht
+rt 90
+pd
+end
+
+to lowsi :ht
+fd :ht
+pu
+fd quotient :ht 5
+pd
+fd quotient :ht 20
+pu
+bk sum sum :ht quotient :ht 5 quotient :ht 20
+pd
+end
+
+to hyundai
+capsh 80
+shiftrt 50 0
+lowsy 80
+shiftrt 50 0
+lowsu 40
+shiftrt 50 0
+lowsn 40
+shiftrt 50 0
+lowsd 80
+shiftrt 50 0
+lowsa 40
+shiftrt 50 0
+lowsi 40
+shiftlt 300 0
+end
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------xxx---------------------------------------------------------------------------------------------------------------------------------------------------
+
+to capsv :ht
+rt 90
+pu
+fd quotient :ht 5
+lt 100
+pd
+fd :ht
+bk :ht
+rt  20
+fd :ht
+bk :ht
+lt 100
+pu
+fd quotient :ht 5
+rt 90
+pd
+end
+
+to volkslogo
+pu
+rt 90
+fd 50
+lt 180
+pd
+repeat 180 [fd quotient quotient product 100 3.14 180 2 rt 1]
+fd 50
+repeat 180 [fd quotient quotient product 100 3.14 180 2 rt 1]
+fd 50
+rt 90
+capsv 100
+rt 90
+fd 15
+lt 90
+capsv 100
+lt 90
+pu
+fd 65
+rt 90
+pd
+end
+
+to lowsk :ht
+fd :ht
+bk product 3 quotient :ht 4
+rt 45 
+fd quotient sum quotient :ht 2 quotient :ht 5 2
+bk quotient sum quotient :ht 2 quotient :ht 5 2
+rt 90
+fd quotient sum quotient :ht 2 quotient :ht 5 2
+bk quotient sum quotient :ht 2 quotient :ht 5 2
+lt 135
+bk quotient :ht 4
+end
+
+to lowss :ht
+rt 90
+fd quotient :ht 4
+repeat 180 [fd quotient quotient product quotient :ht 2 3.14 180 2 lt 1]
+repeat 180 [fd quotient quotient product quotient :ht 2 3.14 180 2 rt 1]
+fd quotient :ht 4
+rt 90
+pu
+fd :ht
+rt 90
+fd quotient :ht 2
+rt 90
+end
+
+to lowsw :ht
+rt 90
+pu
+fd quotient :ht 5
+lt 100
+pd
+fd :ht
+bk :ht
+rt 20
+fd :ht
+bk :ht
+rt 80
+pu
+fd sum quotient :ht 5 quotient :ht 10
+lt 100
+pd
+fd :ht
+bk :ht
+rt 20
+fd :ht
+bk :ht
+lt 100
+pu
+fd sum product 2 quotient :ht 5 quotient :ht 10
+rt 90
+pd
+end
+
+to lowsg :ht
+pu
+fd quotient :ht 4
+pd
+repeat 360 [fd quotient quotient product quotient :ht 2 3.14 180 2 rt 1]
+rt 90
+pu
+fd quotient :ht 2
+rt 90
+pd
+bk quotient :ht 4
+fd product 3 quotient :ht 4
+repeat 180 [fd quotient quotient product quotient :ht 2 3.14 180 2 rt 1]
+pu
+fd quotient :ht 4
+end
+
+to volks
+capsv 60
+shiftrt 30 0
+lowso 30
+shiftrt 40 0
+lowsl 60
+shiftrt 10 0
+lowsk 60
+shiftrt 25 0
+lowss 30
+shiftrt 25 0
+lowsw 30
+shiftrt 30 0
+lowsa 30
+shiftrt 40 0
+lowsg 60
+shiftrt 40 0
+lowse 30
+shiftrt 40 0
+lowsn 30
+shiftlt 280 0
+end
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------xxx---------------------------------------------------------------------------------------------------------------------------------------------------
+
+to capsa :ht
+rt 10
+fd :ht
+rt 160
+fd :ht
+bk quotient :ht 2
+rt 100
+fd difference quotient :ht 4 quotient product :ht 2 25
+lt 90
+pu
+fd difference quotient :ht 2 quotient :ht 100
+rt 90
+fd product quotient :ht 100 9
+rt 90
+pd
+end
+
+to rectangle :ht :lt
+repeat 2 [fd :ht rt 90 fd :lt rt 90]
+end
+
+to acuralogo
+rectangle 100 75
+rt 90
+fd 20
+lt 90
+capsa 100
+lt 90
+fd 20
+rt 90
+end
+
+to lowsc :ht
+pu
+rt 90
+fd :ht
+rt 180
+pd
+fd quotient :ht 2
+repeat 180 [fd quotient product quotient :ht 2 3.14 180 rt 1]
+fd quotient :ht 2
+pu
+bk :ht
+lt 90
+bk :ht
+pd
+end
+
+to acura
+capsa 80
+shiftrt 40 0
+lowsc 40
+shiftrt 50 0
+lowsu 40
+shiftrt 50 0
+lowsr 40
+shiftrt 50 0
+lowsa 40
+shiftlt 190 0
+end
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------xxx---------------------------------------------------------------------------------------------------------------------------------------------------
+
+to blockcapst :ht
+rt 90
+pu
+fd quotient difference :ht quotient :ht 5 2
+lt 90
+pd
+fd difference :ht quotient :ht 5
+lt 90
+fd quotient difference :ht quotient :ht 5 2
+rt 90
+fd quotient quotient difference :ht quotient :ht 5 2 2
+rt 90
+fd :ht
+rt 90
+fd quotient quotient difference :ht quotient :ht 5 2 2
+rt 90
+fd quotient difference :ht quotient :ht 5 2
+lt 90
+fd difference :ht quotient :ht 5
+rt 90
+fd quotient quotient difference :ht quotient :ht 5 2 2
+rt 90
+end
+
+to tatalogo
+setpc 1
+pu
+rt 90
+fd 37.5
+lt 180
+pd
+repeat 180 [fd quotient quotient product 75 3.14 180 2 rt 1]
+fd 50
+repeat 180 [fd quotient quotient product 75 3.14 180 2 rt 1]
+fd 50
+pu
+fd 5
+pd
+rt 90
+blockcapst 65
+lt 90
+pu
+fd 58
+rt 90
+pd
+setpc 7
+end
+
+to capst :ht
+pu
+rt 90
+fd quotient :ht 4
+pd 
+lt 90
+fd :ht
+lt 90
+fd quotient :ht 4
+bk quotient :ht 2
+fd quotient :ht 4
+lt 90
+fd :ht
+rt 90
+pu
+fd quotient :ht 4
+rt 90
+pd
+end
+
+to tata
+capst 100
+shiftrt 60 0
+lowsa 50
+shiftrt 60 0
+lowst 100
+shiftrt 60 0
+lowsa 50
+shiftlt 180 0
+end
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------xxx---------------------------------------------------------------------------------------------------------------------------------------------------
+
+to benzlogo
+pu
+fd 50
+pd
+qcircle 100
+rt 90
+fd 50
+lt 60
+fd 50
+bk 50
+rt 120
+fd 50
+bk 50
+rt 120
+fd 50
+rt 90
+repeat 3 [qcircle 100]
+pu
+bk 50
+pd
+end
+
+to lowsz :ht
+rt 90
+fd :ht
+bk :ht
+lt 45
+fd sum :ht difference quotient :ht 2 quotient :ht 10
+lt 135
+fd :ht
+lt 90
+pu
+fd :ht
+rt 180
+pd
+end
+
+to benz
+capsm 30
+shiftrt 40 0
+lowse 15
+shiftrt 25 0
+lowsr 15
+shiftrt 25 0
+lowsc 15
+shiftrt 25 0
+lowse 15
+shiftrt 25 0
+lowsd 30
+shiftrt 25 0
+lowse 15
+shiftrt 25 0
+lowss 15
+shiftrt 15 15
+rt 90
+fd 10
+lt 90
+shiftrt 10 -15
+capsb 30
+shiftrt 25 0
+lowse 15
+shiftrt 25 0
+lowsn 15
+shiftrt 25 0
+lowsz 15
+shiftrt quotient 15 100 0
+shiftlt 300 0
+end
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------xxx---------------------------------------------------------------------------------------------------------------------------------------------------
+
+to capso :ht 
+rt 90
+pu
+fd quotient :ht 2
+lt 180
+pd
+repeat 360 [fd quotient sum product 3 quotient :ht 2 product 7 quotient :ht 100 180 rt 1]
+pu
+fd quotient :ht 2
+rt 90
+pd
+end
+
+to capsl :ht
+fd :ht
+bk :ht
+rt 90
+fd quotient :ht 2
+bk quotient :ht 2
+lt 90
+end
+
+to volvologo
+capsv 50
+shiftrt 20 0
+capso 50
+shiftrt 60 0
+capsl 50
+shiftrt 35 0
+capsv 50
+shiftrt 20 0
+capso 50
+shiftlt 135 0
+end
+
+to volvo
+capsv 80
+shiftrt 40 0
+lowso 40
+shiftrt 50 0
+lowsl 80
+shiftrt 10 0
+lowsv 40
+shiftrt 25 0
+lowso 40
+shiftlt 125 0
+end
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------xxx---------------------------------------------------------------------------------------------------------------------------------------------------
+
+to audilogo
+setpc 6
+pu
+fd 50
+pd
+repeat 3 [circle 100 rt 90 pu fd 80 pd lt 90]
+circle 100
+shiftlt 340 0
+setpc 7
+end
+
+to audi
+capsa 100
+shiftrt 45 0
+lowsu 50
+shiftrt 60 0
+lowsd 100
+shiftrt 60 0
+lowsi 50
+shiftlt 150 0
+end
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------xxx---------------------------------------------------------------------------------------------------------------------------------------------------
+
+to logos
+cs
+shiftlt 550 265
+acura
+shiftrt 370 0
+acuralogo
+shiftlt 370 -125
+audi
+shiftrt 175 0
+audilogo
+shiftlt 90 -155
+bmw
+shiftrt 370 0
+bmwlogo
+shiftlt 370 -85
+chevy
+shiftrt 370 0
+chevylogo
+shiftlt 370 -115
+honda
+shiftrt 370 0
+hondalogo
+shiftrt 200 410
+hyundai
+shiftrt 330 0
+hyundailogo
+shiftlt 330 -115
+benz
+shiftrt 370 0
+benzlogo
+shiftlt 370 -125
+tata
+shiftrt 370 0
+tatalogo
+shiftlt 370 -105
+volks
+shiftrt 370 0
+volkslogo
+shiftlt 370 -105
+volvo
+shiftrt 360 0
+volvologo
+end
+
+cs
+ct
+pd

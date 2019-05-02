@@ -1,0 +1,115 @@
+erase "qcirclert
+to qcirclert :ht
+repeat 90 [fd quotient product 3.14 :ht 360 rt 1]
+end
+
+erase "hcirclert
+to hcirclert :ht
+repeat 180 [fd quotient product 3.14 :ht 360 rt 1]
+end
+
+erase "shift
+to shift  :x :y
+rt 90
+pu
+fd :x
+lt 90
+fd :y
+pd
+end
+
+erase "circlert
+to circlert :ht
+repeat 360 [fd quotient product 3.14 :ht 360 rt 1]
+end
+
+
+erase "sphere
+to sphere :ht
+circlert :ht
+shift :ht/3 0
+fill
+shift :ht/-3 0
+end
+
+erase "traffic.light.basic
+to traffic.light.basic
+; outline
+pd ppt setpensize 5 setpc 7
+repeat 2 [fd (2*10)+(2*(100-20)) hcirclert 100]
+shift 10 0
+; green
+setpc 2
+sphere 100-20
+shift 0 100-10
+; yellow
+setpc 6
+sphere 100-20
+shift 0 100-10
+; red
+setpc 4
+sphere 100-20
+shift 0 100-10
+; back to position
+shift -10 -(3*(100-10))
+end
+
+traffic.light.basic
+
+erase "traffic.light
+to traffic.light
+; outline
+setpensize 5 setpc 7
+repeat 2 [fd (2*10)+(2*(100-20)) hcirclert 100]
+shift 10 0
+; green
+setpc 2
+sphere 100-20
+make "gx xcor make "gy ycor
+shift 0 100-10
+; yellow
+setpc 6
+sphere 100-20
+make "yx xcor make "yy ycor
+shift 0 100-10
+; red
+setpc 4
+sphere 100-20
+make "rx xcor make "ry ycor
+shift 0 100-10
+; back to position
+shift -10 -(3*(100-10))
+;animation
+wait 90 
+forever [
+; erasing red 'n' yellow
+pu setxy :rx :ry pd
+setpc 0 sphere 100-20
+pu setxy :yx :yy pd
+setpc 0 sphere 100-20
+pu setxy :gx :gy pd
+setpc 2 sphere 100-20
+
+; going to the green
+setpc 2 ppt pu setxy :gx :gy pd
+wait 600
+
+; erasing green
+setpc 0 sphere 100-20
+
+; painting the yellow
+setpc 6 pu setxy :yx :yy pd
+sphere 100-20
+wait 300
+
+; erasing yellow
+setpc 0 sphere 100-20
+
+; painting the red
+setpc 4 pu setxy :rx :ry pd
+sphere 100-20
+wait 1200
+]
+end
+
+traffic.light

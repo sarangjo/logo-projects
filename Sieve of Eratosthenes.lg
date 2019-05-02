@@ -1,0 +1,64 @@
+; p1 takes a no. N and makes a list [2 3 4 5 6 .... N]
+
+erase "p1
+to P1 :n
+local "numbers
+make "numbers []
+repeat :n-1 [make "numbers sentence :numbers repcount+1]
+output :numbers
+end
+
+P1 100
+
+; p2 takes a list of the form [a a+1 a+2 ...] and a no. N. whichever no. in the list is divisible by N, except N itself, will be replaced by 0. Otherwise the original list is untouched. Basically, this is the divider.
+
+erase "p2
+to p2 :l :divisor
+local "list
+make "list []
+local "curr.divid 
+repeat count :l [
+  make "curr.divid (item repcount :l) 
+  ifelse (:curr.divid = :divisor) [
+    make "list sentence :list :curr.divid
+  ] [
+    ifelse not ((remainder :curr.divid :divisor)=0) [
+      make "list sentence :list :curr.divid
+    ] [
+      make "list sentence :list 0
+    ]
+  ]
+]
+output :list
+end
+
+print p2 p1 100 7
+
+; p3 takes a list of the form [a a+1 a+2 .... 0 a+b a+b+1 ... 0 ...] and ouputs a compressed list, eliminating the zeroes.
+
+erase "p3
+to p3 :l
+local "list make "list []
+repeat count :l [
+  if not ((item repcount :l) = 0 ) [
+    make "list sentence :list item repcount :l
+  ]
+]
+output :list
+end
+
+p3 p2 p1 100 3
+
+erase "main
+to main :n
+local "main.list
+make "main.list p1 :n
+repeat :n-1 [
+  if not ((item repcount :main.list) = 0) [
+    make "main.list p2 :main.list item repcount :main.list
+  ]
+]
+print p3 :main.list
+end
+
+main 100

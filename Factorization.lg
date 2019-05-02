@@ -1,0 +1,36 @@
+
+erase "p1
+to p1 :n
+  local "list make "list []
+  repeat :n-2 [
+    if (remainder :n (repcount+1)) = 0 [
+      make "list sentence :list (repcount+1) stop
+    ]
+  ]
+  make "list sentence :list :n
+  output :list
+end
+
+
+
+erase "func
+to func :n :d
+  local "r make "r remainder :n :d
+  if :n < :d [stop]
+  ifelse [:r=0] [
+    make "l sentence :l :d
+    func :n/:d :d
+  ] [
+    func :n :d+1
+  ]
+end
+
+erase "main
+to main :n
+  local "l make "l []
+  func :n 2
+  print :l
+end
+
+main 60
+

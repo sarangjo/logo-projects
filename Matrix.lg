@@ -1,0 +1,49 @@
+erase "square
+to square :ht
+repeat 4 [fd :ht rt 90]
+end
+
+erase "shift
+to shift :x :y
+pu fd :y
+rt 90 fd :x
+lt 90 pd
+end
+
+erase "row
+to row :ht :n
+repeat :n [square :ht shift :ht 0]
+end
+
+erase "l.square
+to l.square :ht :n
+  square :ht
+  shift :ht/3 :ht/3
+  label :n
+  shift -:ht/3 -:ht/3
+end
+
+l.square 50 10
+
+erase "m.row
+to m.row :ht :n
+  repeat :n [l.square :ht repcount shift :ht 0]
+end
+
+erase "matrix
+to matrix :size :c :r
+  local "no make "no 0
+  repeat :r [
+    repeat :c [
+      make "no :no+1
+      l.square :size :no
+      shift :size 0
+      
+    ]
+    shift -(:size*:c) -(:size)
+  ]
+  shift 0 :size*:r
+end
+
+matrix 50 10 10
+

@@ -1,0 +1,17 @@
+erase "tree
+to tree :size :level
+  if [:level=0] [
+    fd :size bk :size stop]
+  fd :size*2/3 
+  rt 30 tree :size/2 :level-1 lt 30
+  lt 30 tree :size/2 :level-1 rt 30
+  fd :size/3 bk :size
+end
+
+cs tree 150 1
+wait 240
+cs tree 150 2
+wait 240
+cs tree 150 3
+wait 240
+

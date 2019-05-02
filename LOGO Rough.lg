@@ -1,0 +1,5 @@
+repeat 5 [fd 100 rt 144]
+repeat 6 [fd 100 rt 120]
+repeat 8 [fd 100 rt 45]
+repeat 8 [fd 100 rt 90]
+repeat 9 [fd 100 rt 80]

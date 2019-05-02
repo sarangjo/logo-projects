@@ -1,0 +1,210 @@
+to circle :ht
+repeat 360 [fd quotient sum product 3 quotient :ht 2 product 7 quotient :ht 100 180 rt 1]
+end
+
+to audilogo :ht
+repeat 3 [circle :ht rt 90 pu bk product 4 quotient :ht 5 pd lt 90]
+circle :ht
+end
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------xxx---------------------------------------------------------------------------------------------------------------------------------------------------
+
+to shiftrt :lt :ht
+rt 90
+pu
+fd :lt
+lt 90
+fd :ht
+pd
+end
+
+to shiftlt :lt :ht
+lt 90
+pu
+fd :lt
+rt 90
+fd :ht
+pd
+end
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------xxx---------------------------------------------------------------------------------------------------------------------------------------------------
+
+to capsa :ht
+rt 10
+fd :ht
+rt 160
+fd :ht
+bk quotient :ht 2
+rt 100
+fd difference quotient :ht 4 quotient product :ht 2 25
+lt 90
+pu
+fd difference quotient :ht 2 quotient :ht 100
+rt 90
+fd product quotient :ht 100 9
+rt 90
+pd
+end
+
+to lowsu :ht
+pu
+fd quotient :ht 2
+pd
+fd quotient :ht 2
+bk quotient :ht 2
+rt 180
+pd
+repeat 180 [fd quotient sum product 3 quotient :ht 2 product 7 quotient :ht 100 180 lt 1]
+fd quotient :ht 2
+bk :ht
+lt 90
+pu
+fd :ht
+rt 90
+pd
+end
+
+to lowsd :ht
+rt 90
+pu
+fd quotient :ht 2
+lt 90
+pd
+fd :ht
+bk product quotient :ht 4 3
+repeat 360 [fd quotient quotient sum product 3 quotient :ht 2 product 7 quotient :ht 100 180 2 lt 1]
+bk quotient :ht 4
+lt 90
+pu
+fd quotient :ht 2
+rt 90
+pd
+end
+
+erase "lowsi
+to lowsi :ht
+fd :ht
+pu
+fd quotient :ht 5
+pd
+fd quotient :ht 20
+pu
+bk sum sum :ht quotient :ht 20 quotient :ht 5
+pd
+end
+
+erase "audiword
+to audiword :ht
+capsa :ht
+shiftrt difference quotient :ht 2 quotient :ht 10 0
+lowsu quotient :ht 2
+shiftrt sum quotient :ht 2 quotient :ht 10 0
+lowsd :ht
+shiftrt sum quotient :ht 2 quotient :ht 10 0
+lowsi quotient :ht 2
+shiftlt sum sum difference quotient :ht 2 quotient :ht 10 sum quotient :ht 2 quotient :ht 10 sum quotient :ht 2 quotient :ht 10 0
+end
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------xxx---------------------------------------------------------------------------------------------------------------------------------------------------
+
+to lowsv :ht
+rt 90
+pu
+fd quotient :ht 4
+pd
+lt 67.5 
+fd sum quotient :ht 2 quotient :ht 5
+bk sum quotient :ht 2 quotient :ht 5
+lt 45
+fd sum quotient :ht 2 quotient :ht 5
+bk sum quotient :ht 2 quotient :ht 5
+lt 67.5
+pu
+fd quotient :ht 4
+rt 90
+pd
+end
+
+to eight :ht
+pu
+fd quotient :ht 4
+pd
+circle quotient :ht 2
+pu
+fd quotient :ht 2
+pd
+circle quotient :ht 2
+pu
+bk product 3 quotient :ht 4
+pd
+end
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------xxx---------------------------------------------------------------------------------------------------------------------------------------------------
+
+to audiword2 :ht
+capsa :ht
+shiftrt difference quotient :ht 2 quotient :ht 10 0
+lowsu quotient :ht 2
+shiftrt sum quotient :ht 2 quotient :ht 10 0
+lowsd :ht
+shiftrt sum quotient :ht 2 quotient :ht 10 0
+lowsi quotient :ht 2
+end
+
+to audiv8 :ht
+audiword2 :ht
+shiftrt quotient :ht 5 0
+lowsv :ht
+shiftrt sum quotient :ht 2 quotient :ht 10 0
+eight :ht
+shiftlt sum sum sum sum difference quotient :ht 2 quotient :ht 10 sum quotient :ht 2 quotient :ht 10 sum quotient :ht 2 quotient :ht 10 sum quotient :ht 2 quotient :ht 10 quotient :ht 5 0
+end
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------xxx---------------------------------------------------------------------------------------------------------------------------------------------------
+
+to square :ht
+repeat 4 [fd :ht rt 90]
+end
+
+to triangle :ht
+repeat 3 [fd :ht rt 120]
+end
+
+to para :ht :lt :ang
+rt difference 90 :ang
+fd :ht
+rt :ang
+fd :lt
+rt difference 180 :ang
+fd :ht
+rt :ang
+fd :lt
+rt 90
+end
+
+to rectangle :ht :lt
+repeat 2 [fd :ht rt 90 fd :lt rt 90]
+end
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------xxx---------------------------------------------------------------------------------------------------------------------------------------------------
+
+erase "audi
+to audi
+shiftlt 250 50
+setpc 6
+audilogo 100
+shiftrt 85 -160
+setpc 3
+audiword 100
+shiftrt 550 -100
+setpc 14
+audiv8 75
+setpc 7
+pu
+rt 90
+bk 175
+lt 90
+fd 200
+end
+cs
+audi

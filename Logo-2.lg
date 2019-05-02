@@ -1,0 +1,13 @@
+erase "wavelet
+to wavelet :h :w
+fd :h rt 90 fd :w rt 90
+fd :h lt 90 fd :w lt 90
+end
+
+erase "skyline
+to skyline
+repeat random 300 [wavelet (random 75)+25 (random 25)+5]
+end
+
+skyline
+

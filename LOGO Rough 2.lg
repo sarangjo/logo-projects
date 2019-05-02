@@ -1,0 +1,2 @@
+set repeat 6 [repeat size [fd 100 rt quotient 360 size]]
+repeat 50 [fd 100 lt 55 bk 100]

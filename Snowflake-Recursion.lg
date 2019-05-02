@@ -1,0 +1,28 @@
+to snowflake
+fd 30
+lt 60 fd 30
+rt 120 fd 30
+lt 60 fd 30
+end
+
+erase "snowflake1
+to snowflake1 :ht
+fd :ht/3
+lt 60 fd :ht/3
+rt 120 fd :ht/3
+lt 60 fd :ht/3
+end
+
+erase "snowflake2
+to snowflake2 :ht
+snowflake1 :ht
+snowflake2 :ht/3
+end
+
+erase "s.triangle
+to s.triangle :ht
+repeat 3 [snowflake1 :ht rt 120]
+end
+
+
+

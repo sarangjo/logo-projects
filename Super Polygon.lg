@@ -1,0 +1,73 @@
+
+
+
+; Super-polygon
+; Draws a super-polygon: in other words, draws a polygon with other polygons extended on each side of the polygon.
+; :ht is the height of the side of each polygon, :side1 is the number of sides the main polygon has, and :side2 is the number of sides each added polygon has.
+
+; THIS PROCEDURE IS EXPLAINED AFTER end.
+
+Basic Shape:
+erase "polygon
+to polygon :ht :no
+repeat :no [fd :ht rt quotient 360 :no]
+end
+
+
+erase "superpoly
+to superpoly :ht :side1 :side2
+  ; STEP 1
+  polygon :ht :side1
+  ; STEP 2
+  lt difference 180 quotient 360 :side2
+  repeat :side1 [
+    ; STEP 3
+    polygon :ht :side2
+    ; STEP 4
+    rt difference 180 quotient 360 :side2
+    ; STEP 5
+    fd :ht
+    ; STEP 6
+    rt quotient 360 :side1
+    ; STEP 7
+    lt difference 180 quotient 360 :side2
+  ]
+  ; STEP 8
+  rt difference 180 quotient 360 :side2
+end
+
+The formula is calculated thus:
+Suppose the inner main polygon has 8 sides and each smaller polygon has 3 sides (a triangle.
+
+First the octagon is drawn. {STEP 1}
+
+Then, the Turtle turns left 60O, i.e. 180 – 120, i.e. 180 – 360/3 (as in polygon). {STEP 2}
+
+The Turtle now draws the first triangle. {STEP 3}
+
+Now, it turns back (right) 60O, i.e. 180 – 120, i.e. 180 – 360/3 (as in polygon). {STEP 4} {AS IN STEP 2}
+
+It goes back up the height. {STEP 5}
+
+Next, the Turtle has to turn for the next triangle. This is done in the following way:
+
+The Turtle is facing up, i.e. 0O.
+
+The Turtle turns right 45O, i.e. 360/8, to be in line with the second side of the octagon. {STEP 6}
+
+Now, if the Turtle turns left 60O,
+
+i.e. 180 – 120,
+
+i.e. 180 – 360/3,
+
+it will be in the right position to draw the next triangle. {STEP 7}
+
+STEPS 3-7 will be repeated 8 times so as to draw triangles on all the eight sides of the octagon.
+
+Now, at the end, after all the small polygons have been drawn, the Turtle turns right 60O, i.e. 180 – 120, i.e. 180 – 360/3 (as in polygon), so as to retain its original position and heading. {STEP 8}
+
+cs superpoly 50 8 3
+cs superpoly 20 10 6
+cs superpoly 50 20 4
+

@@ -1,0 +1,110 @@
+1. Draw a square:
+fd 100
+rt 90
+fd 100
+rt 90
+fd 100
+rt 90
+fd 100
+2. Draw a capital H:
+fd 100
+bk 50 
+rt 90
+fd 50
+lt 90
+fd 50
+bk 100
+A. 3. Draw 'Hi!'
+fd 100
+bk 50 
+rt 90
+fd 50
+lt 90
+fd 50
+bk 100
+rt 90
+pu
+fd 25
+lt 90
+pd
+fd 75
+pu
+fd 20
+pd
+fd 5
+rt 90
+pu
+fd 25
+rt 90
+pd
+bk 75
+pu
+bk 20
+pd
+bk 5
+4. Draw 6 steps:
+fd 40
+rt 90
+fd 40
+lt 90
+fd 40
+rt 90
+fd 40
+lt 90
+fd 40
+rt 90
+fd 40
+lt 90
+fd 40
+rt 90
+fd 40
+lt 90
+fd 40
+rt 90
+fd 40
+lt 90
+fd 40
+rt 90
+fd 40
+5. Draw 6 dashes:
+fd 30
+pu
+fd 30
+pd
+fd 30
+pu
+fd 30
+pd
+fd 30
+pu
+fd 30
+pd
+fd 30
+pu
+fd 30
+pd
+fd 30
+pu
+fd 30
+pd
+fd 30
+6. Draw 6 steps using 'repeat':
+repeat 6 [fd 40 rt 90 fd 40 lt 90]
+A. 7. Draw a one-pointed star with 8 lines crossing the point, using 'repeat':
+repeat 16 [fd 100 bk 100 lt 22.5]
+A. 8. Write 'Hi!' 5 times, in one line, with spacing. Use 'repeat'.
+repeat 5 [type [Hi! ]]
+9. Draw 5 squares, side-by-side, leaving some space in between.
+repeat 5 [repeat 4 [fd 50 rt 90] rt 90 pu fd 90 lt 90 pd]
+10. Draw a triangle using 'repeat'.
+repeat 3 [fd 100 r t 120]
+11. Draw a square using 'repeat'.
+repeat 4 [fd 100 r t 90]
+12. Draw a pentagon using 'repeat'.
+repeat 5 [fd 100 r t 72]
+13. Draw a hexagon using 'repeat'.
+repeat 6 [fd 100 r t 60]
+14. Draw an octagon using 'repeat'.
+repeat 8 [fd 100 r t 45]
+15. Draw a triangle of 'Hi!'s, one more on every new line. There should be 20 lines.
+repeat 20 [repeat repcount [type "Hi!] print []]

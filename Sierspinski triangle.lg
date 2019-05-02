@@ -1,0 +1,51 @@
+Sierpinski Triangle:
+Basic Shape:
+
+erase "shift
+to shift  :x :y
+rt 90
+pu
+fd :x
+lt 90
+fd :y
+pd
+end
+
+
+erase "sit.tri
+to sit.tri :ht
+rt 30 polygon :ht 3
+lt 30
+end
+
+erase "stack.tri
+to stack.tri :ht
+sit.tri :ht
+rt 30 fd :ht
+lt 30 sit.tri :ht
+rt 30 bk :ht lt 30
+shift :ht 0
+sit.tri :ht
+shift -:ht 0
+end
+
+cs stack.tri 200
+
+erase "siers
+to siers :ht :level
+  if :level<1 [stop]
+  sit.tri :ht
+  siers :ht/2 :level-1
+  rt 30 fd :ht
+  lt 30 sit.tri :ht
+  siers :ht/2 :level-1
+  rt 30 bk :ht lt 30
+  shift :ht 0
+  sit.tri :ht
+  siers :ht/2 :level-1
+  shift -:ht 0
+end
+
+cs siers 100 2
+cs siers 200 8
+

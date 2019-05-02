@@ -1,0 +1,12 @@
+erase "factor
+to factor :n
+repeat round sqrt :n [
+  local [d f] make "d (repcount+1) make "f [] 
+  ifelse ((remainder :n :d) = 0) [
+    make "f sentence :f :d
+    ifelse (is.prime :n/:d = 0) [factor :n/:d] [stop]
+  ] [
+
+end
+
+factor 54
